@@ -31,6 +31,6 @@ jobs:
           server: ftp.cluster026.hosting.ovh.net
           username: ${{ secrets.OVH_USER }}
           password: ${{ secrets.OVH_PASSWORD }}
-          local-dir: ./public
+          local-dir: ./public/
           server-dir: /home/homosapicd/wwwdavidp/
 
