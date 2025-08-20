@@ -1,16 +1,15 @@
-name: Deploy Hugo site to OVH
+name: Deploy Hugo site to GitHub Pages & OVH
 
 on:
   push:
     branches:
-      - main  # Cada push a main activará la acción
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Descargar el repositorio
+      # 1️⃣ Descargar repositorio
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -20,11 +19,18 @@ jobs:
         with:
           hugo-version: '0.148.2'
 
-      # 3️⃣ Construir el sitio Hugo
+      # 3️⃣ Compilar sitio
       - name: Build Hugo site
         run: hugo --minify
 
-      # 4️⃣ Subir los archivos a OVH via FTP
+      # 4️⃣ Subir a GitHub Pages (preview)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+
+      # 5️⃣ Subir a OVH (producción)
       - name: Deploy to OVH
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
@@ -33,5 +39,3 @@ jobs:
           password: ${{ secrets.OVH_PASSWORD }}
           local-dir: ./public/
           server-dir: /home/homosapicd/wwwdavidp/
-          dry-run: true   # Solo prueba sin subir
-
