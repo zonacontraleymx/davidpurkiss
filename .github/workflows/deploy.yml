@@ -33,4 +33,5 @@ jobs:
           password: ${{ secrets.OVH_PASSWORD }}
           local-dir: ./public/
           server-dir: /home/homosapicd/wwwdavidp/
+          dry-run: true   # Solo prueba sin subir
 
