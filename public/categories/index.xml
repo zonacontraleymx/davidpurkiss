@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on David Purkiss</title>
+    <link>http://davidpurkiss.com/categories/</link>
+    <description>Recent content in Categories on David Purkiss</description>
+    <generator>Hugo</generator>
+    <language>es-mx</language>
+    
+    
+    
+    
+    <lastBuildDate>Tue, 19 Aug 2025 22:00:00 -0600</lastBuildDate>
+    
+    
+    <atom:link href="http://davidpurkiss.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducción</title>
+      <link>http://davidpurkiss.com/categories/introducci%C3%B3n/</link>
+      <pubDate>Tue, 19 Aug 2025 22:00:00 -0600</pubDate>
+      <guid>http://davidpurkiss.com/categories/introducci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reflexiones</title>
+      <link>http://davidpurkiss.com/categories/reflexiones/</link>
+      <pubDate>Tue, 19 Aug 2025 22:00:00 -0600</pubDate>
+      <guid>http://davidpurkiss.com/categories/reflexiones/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

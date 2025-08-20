@@ -1,0 +1,10 @@
+baseURL = "http://davidpurkiss.com/"
+languageCode = "es-mx"
+title = "David Purkiss"
+description = "Mis apuntes"
+theme = "hugo-bearneo"
+
+
+# Opcional: descripción y autor
+# description = "Sitio web de prueba con Hugo y Ananke"
+# author = "David Purkiss"
