@@ -32,5 +32,5 @@ jobs:
           username: ${{ secrets.OVH_USER }}
           password: ${{ secrets.OVH_PASSWORD }}
           local-dir: ./public
-          server-dir: /home/homosapicd/www/
+          server-dir: /home/homosapicd/wwwdavidp/
 
