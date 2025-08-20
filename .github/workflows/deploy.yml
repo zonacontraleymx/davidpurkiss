@@ -1,1 +1,36 @@
+name: Deploy Hugo site to OVH
+
+on:
+  push:
+    branches:
+      - main  # Cada push a main activará la acción
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Descargar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Instalar Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.148.2'
+
+      # 3️⃣ Construir el sitio Hugo
+      - name: Build Hugo site
+        run: hugo --minify
+
+      # 4️⃣ Subir los archivos a OVH via FTP
+      - name: Deploy to OVH
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.cluster026.hosting.ovh.net
+          username: ${{ secrets.OVH_USER }}
+          password: ${{ secrets.OVH_PASSWORD }}
+          local-dir: ./public
+          server-dir: /home/homosapicd/www/
 
